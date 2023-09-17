@@ -1,0 +1,243 @@
+# DESAFIO 05: OBSOLETO
+## Atenção
+Este desafio foi marcado como OBSOLETO. O texto original permanecerá abaixo para efeitos de referência, mas os admins não aceitarão novas contribuições para este desafio.
+
+## Processando as informações da empresa:
+Considere, como exemplo, o seguinte arquivo funcionarios.json, com o seguinte conteúdo:
+```
+{
+    "funcionarios":[
+        {
+            "id":0,
+            "nome":"Marcelo",
+            "sobrenome":"Silva",
+            "salario":3200.00,
+            "area":"SM"
+        },
+        {
+            "id":1,
+            "nome":"Washington",
+            "sobrenome":"Ramos",
+            "salario":2700.00,
+            "area":"UD"
+        },
+        {
+            "id":2,
+            "nome":"Sergio",
+            "sobrenome":"Pinheiro",
+            "salario":2450.00,
+            "area":"SD"
+        },
+        {
+            "id":3,
+            "nome":"Bernardo",
+            "sobrenome":"Costa",
+            "salario":3700.00,
+            "area":"SM"
+        },
+        {
+            "id":4,
+            "nome":"Cleverton",
+            "sobrenome":"Farias",
+            "salario":2750.00,
+            "area":"SD"
+        },
+        {
+            "id":5,
+            "nome":"Abraão",
+            "sobrenome":"Campos",
+            "salario":2550.00,
+            "area":"SD"
+        },
+        {
+            "id":6,
+            "nome":"Letícia",
+            "sobrenome":"Farias",
+            "salario":2450.00,
+            "area":"UD"
+        },
+        {
+            "id":7,
+            "nome":"Fernando",
+            "sobrenome":"Ramos",
+            "salario":2450.00,
+            "area":"SD"
+        },
+        {
+            "id":8,
+            "nome":"Marcelo",
+            "sobrenome":"Farias",
+            "salario":2550.00,
+            "area":"UD"
+        },
+        {
+            "id":9,
+            "nome":"Fabio",
+            "sobrenome":"Souza",
+            "salario":2750.00,
+            "area":"SD"
+        },
+        {
+            "id":10,
+            "nome":"Clederson",
+            "sobrenome":"Oliveira",
+            "salario":2500.00,
+            "area":"SD"
+        }
+    ],
+    "areas":[
+        {
+            "codigo":"SD",
+            "nome":"Desenvolvimento de Software"
+        },
+        {
+            "codigo":"SM",
+            "nome":"Gerenciamento de Software"
+        },
+        {
+            "codigo":"UD",
+            "nome":"Designer de UI/UX"
+        }
+    ]
+}
+```
+
+Utilize a linguagem de programação de sua preferência (e quaisquer bibliotecas que sejam necessárias) e escreva um programa que leia o nome de um arquivo JSON como parâmetro – que seguirá os mesmos moldes do arquivo funcionarios.json listado acima – e imprima as informações solicitadas a seguir, baseado no conteúdo do arquivo lido.
+
+## Condições 
+Em todos os casos abaixo, assuma:
+* Todos os cálculos envolvendo salários (mínimo, máximo, média) são feitos em ponto flutuante.
+* Todas as impressões de salário feitas em duas casas decimais, sem formatação (ex: 1234.56)
+* “Nome completo” == Nome + espaço + Sobrenome (Ex: João Silva)
+“Nome da área” é o nome da área, não o código.
+* A listagem não precisa estar ordenada.
+
+## Questões 
+1. Quem mais recebe e quem menos recebe na empresa e a média salarial da empresa. 
+Calcular e imprimir o nome completo do(s) funcionário(s) com o(s) maior(es) e menor(res) salário(s) na empresa inteira, bem como o salário médio. Em caso de empate (mais de um funcionário nas posições de maior ou menor salário), imprimir todos os funcionários nessas posições que tem o mesmo salário.
+
+* Formato (máximo)
+```
+global_max|<Nome Completo>|<Salário>
+Formato (mínimo)
+
+global_min|<nome completo>|<salário>
+Formato (média)
+
+global_avg|<média salarial>
+Exemplo:
+
+global_min|José Ruela|800.00
+global_min|José Mané|800.00
+global_max|Bernardo Costa|3700.00
+global_avg|1400.23
+```
+
+2. Quem mais recebe e quem menos recebe em cada área e a média salarial em cada área. 
+Calcular e imprimir o nome completo do(s) funcionário(s) com o(s) maior(es) e menor(res) salário(s) por área da empresa empresa, bem como o salário médio (também por área). Em caso de empate (mais de um funcionário nas posições de maior ou menor salário em uma determinada área), imprimir todos os funcionários nessas posições que tem o mesmo salário, em cada área.
+
+* Formato (máximo)
+```
+area_max|<nome da área>|<nome completo>|<salário máximo>
+Formato (mínimo)
+
+area_min|<nome da área>|<nome completo>|<salário>
+Formato (média)
+
+area_avg|<nome da área>|<salário médio>
+Exemplo:
+
+area_max|Gerenciamento de Software|Bernardo Costa|3700.00
+area_max|Gerenciamento de Software|Richie Rich|3700.00
+area_max|Recrutamento|Hugh Hefner|3700.00
+area_min|Gerenciamento de Software|Marcelo Souza|1200.00
+area_min|Gerenciamento de Software|João Lenão|1200.00
+area_avg|Gerenciamento de Software|3450.00
+area_avg|Recrutamento|3000.00
+```
+
+3. Área(s) com o maior e menor número de funcionários 
+Calcular e imprimir as áreas com o maior e menor número de funcionários. Em caso de empate (mais de uma área com o mesmo número máximo ou mínimo de funcionários), todas as áreas dentro daquele critério devem ser impressas.
+
+* Formato (área(s) com o maior número de funcionários):
+```
+most_employees|<nome da área>|<número de funcionários>
+Formato (área(s) com o menor número de funcionários)
+
+least_employees|<nome da área>|<número de funcionários>
+Exemplos:
+
+least_employees|Gerenciamento de Software|2
+least_employees|Limpeza|2
+most_employees|Recursos Humanos|30
+most_employees|Engenharia|30
+4. Maiores salários para funcionários com o mesmo sobrenome 
+Para cada sobrenome com mais de um funcionário, listar o(s) funcionário(s) que recebem o maior salário. Assim como nos itens anteriores, se mais de um funcionário com o mesmo sobrenome tiver o maior salário, listar todos estes.
+```
+
+* Formato:
+```
+last_name_max|<sobrenome do funcionário>|<nome completo>|<salário>
+Exemplo:
+
+last_name_max|Farias|Cleverton Farias|2750.00
+last_name_max|Farias|Paulo César|2750.00
+Exemplo de saída esperada para o arquivo funcionarios.json dado acima como exemplo: 
+global_max|Bernardo Costa|3700.00
+global_min|Sergio Pinheiro|2450.00
+global_min|Letícia Farias|2450.00
+global_min|Fernando Ramos|2450.00
+global_avg|2731.82
+area_max|Gerenciamento de Software|Bernardo Costa|3700.00
+area_min|Gerenciamento de Software|Marcelo Silva|3200.00
+area_avg|Gerenciamento de Software|3450.00
+area_max|Designer de UI/UX|Washington Ramos|2700.00
+area_min|Designer de UI/UX|Letícia Farias|2450.00
+area_avg|Designer de UI/UX|2566.67
+area_max|Desenvolvimento de Software|Cleverton Farias|2750.00
+area_max|Desenvolvimento de Software|Fabio Souza|2750.00
+area_min|Desenvolvimento de Software|Sergio Pinheiro|2450.00
+area_min|Desenvolvimento de Software|Fernando Ramos|2450.00
+area_avg|Desenvolvimento de Software|2575.00
+most_employees|Desenvolvimento de Software|6
+least_employees|Gerenciamento de Software|2
+last_name_max|Ramos|Washington Ramos|2700.00
+last_name_max|Farias|Cleverton Farias|2750.00
+```
+
+* Arquivos de dados/teste 
+Para obter o MD5 do resultado (no Linux), execute o seu programa da seguinte forma:
+```
+<PROGRAMA> <ARQUIVO DE TESTE> | sort | md5sum 
+Arquivos de Teste	MD5 Resultado
+10K Registros	967eb7059d62e6d430d67eeb16e45e44
+50K Registros	1c25b8e3d52ff9ae5ec9883570c49d59
+100K Registros	fc4caf6d53d265453d62da0983bb3fb5
+250K Registros	6e41f0316ee66d9266c1e5d32891b3bf
+500K Registros	98fecdfd321a5cd966eefbb9f8b31785
+1M Registros	b9012db943149e069920bf7c3ec49984
+2M Registros	483cc5423f6502a84c4ec9adc0ce8cbb
+3M Registros	93912b5d0ffeccc86db7d596f0078115
+5M Registros	92d5d4b4dd1bf5c965f79053145ae0f2
+8M Registros	50801387d4d06ed42043ca2325a01122
+12M Registros	cddb5d244bca76b71e5ee7db95e022e8
+15M Registros	acd7306f4ef82721bc301f488dd59d60
+20M Registros	66d8426057595b172e7a50be8ce65db7
+25M Registros	8aa026b23a51940347335f5b22d0177b
+30M Registros	1c0e814e642c5fd58a2ee3dcd8c9e807
+```
+
+## Resultados 
+Após validar os resultados, confira o desempenho do seu código na página de resultados do desafio-05.
+
+## Pontuação 
+50 pontos.
+
+## Enviando os resultados 
+* Teste o seu programa localmente e verifique que está operando de forma desejada.
+* Se o desafio necessitar de validação (desafio-08 em diante), siga os procedimentos de validação descritos acima.
+* Crie um Pull Request (PR) seguindo as instruções na documentação no repositório op-desafios.
+* Envie o PR para revisão. Um dos admins irá aprovar o PR ou requisitar modificações.
+* Após o PR ter sido aprovado, a pontuação será automaticamente contabilizada na página de hi-scores a cada 15 minutos.
+
+* [SAIBA MAIS](https://osprogramadores.com/desafios/d05/)
