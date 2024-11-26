@@ -1,4 +1,4 @@
-# OS PROGRAMADORES:
+# OS PROGRAMADORES
 💣SOMENTE OS CÓDIGOS DOS DESAFIOS DO "OS PROGRAMADORES".
 
 <img src="FOTO.png" align="center" width="400"> <br>
